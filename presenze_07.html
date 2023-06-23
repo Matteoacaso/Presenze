@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tabella con spunta cliccabile</title>
+  <style>
+  body {
+      background-color: rgba(41, 164, 181, 0.3);
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      border: 1px solid black;
+      padding: 8px;
+      text-align: left;
+    }
+    
+    th {
+      background-color: #f2f2f2;
+    }
+    
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      appearance: none;
+      border: 1px solid #999999;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    .checkbox:checked {
+      background-color: green;
+    }
+    
+    .checkbox:checked::before {
+      content: '\2714';
+      display: block;
+      text-align: center;
+      color: white;
+    }
+  </style>
+  <script>
+    var resetPassword = "password123"; // Imposta qui la password per il reset
+    
+    function saveAsPDF() {
+      // Aggiungi qui il codice per salvare il sito come PDF
+      alert("Il sito sarà salvato come PDF.");
+    }
+    
+    function checkboxClick(checkbox) {
+      checkbox.checked = true;
+      checkbox.disabled = true;
+    }
+    
+    function resetCheckboxes() {
+      var password = prompt("Inserisci la password per il reset:");
+      if (password === "123") {
+        var checkboxes = document.getElementsByClassName("checkbox");
+        for (var i = 0; i < checkboxes.length; i++) {
+          checkboxes[i].checked = false;
+          checkboxes[i].disabled = false;
+        }
+      } else {
+        alert("Password errata. Impossibile effettuare il reset.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Nome</th>
+      <th>Azione</th>
+    </tr>
+    <tr>
+      <td>Nome 1</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 2</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+        <tr>
+      <td>Nome 3</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 4</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+        <tr>
+      <td>Nome 5</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 6</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+        <tr>
+      <td>Nome 7</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 8</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+        <tr>
+      <td>Nome 9</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 10</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+        <tr>
+      <td>Nome 11</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 12</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+        <tr>
+      <td>Nome 13</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 14</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+        <tr>
+      <td>Nome 15</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 16</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+        <tr>
+      <td>Nome 17</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 18</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+        <tr>
+      <td>Nome 19</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    <tr>
+      <td>Nome 20</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    
+    <!-- Aggiungi altre righe con nomi e spunte cliccabili qui -->
+    <!-- Esempio: -->
+    <!--
+    <tr>
+      <td>Nome 3</td>
+      <td><input type="checkbox" class="checkbox" onclick="checkboxClick(this)"></td>
+    </tr>
+    -->
+  </table>
+  
+  <button onclick="saveAsPDF()">Salva come PDF</button>
+  <button onclick="resetCheckboxes()">Resetta caselle</button>
+</body>
+</html>
